@@ -64,7 +64,7 @@ graph LR
 
 ### SDK Features Leveraged
 - **LocalAgentConfig**: Configures models, connection overrides, and skill loading.
-- **Filesystem Skills Directory**: Configures `skills_paths` pointing to the `/skills` folder containing `architect`, `remember`, `recover`, `review`, and customized banking skills.
+- **Filesystem Skills Directory**: Configures `skills_paths` pointing to the `/skills` folder containing `architect`, `scope`, `develop`, `check`, `test`, `audit`, `debug`, `document`, `sync`, and customized banking skills.
 - **AskQuestionHook / Event Hooks**: Allows the agent to pause execution and prompt a compliance officer for confirmations during high-risk steps.
 - **Structured Outputs**: Forces agents to return risk assessments and reports matching strict JSON Pydantic schemas.
 

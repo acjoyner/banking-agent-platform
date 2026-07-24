@@ -30,11 +30,11 @@ Use this file to monitor the execution of the build plan. Check off items as the
   - [ ] Implement python helper functions to consume Spring Boot REST API endpoints.
   - [ ] Define annotations, descriptions, and typings for tool-calling registration.
 - [ ] **06 Agent Skill Integration**
-  - [ ] Copy and configure skill folders (`architect`, `remember`, `recover`, `review`) from `jsmastery-pro/skills`.
+  - [ ] Copy and configure skill folders (`architect`, `scope`, `develop`, `check`, `test`, `audit`, `debug`, `document`, `sync`) from `jsmastery-pro/skills`.
   - [ ] Implement specialized `compliance-audit` skill instructions.
 - [ ] **07 Pytest Suite**
   - [ ] Write tests verifying tool selection by the agent under mocked response rules.
-  - [ ] Write tests verifying error handling (using the `recover` skill logic).
+  - [ ] Write tests verifying error handling (using the `debug` and recovery skill logic).
 
 ---
 

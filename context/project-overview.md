@@ -64,7 +64,7 @@ A sleek, responsive top navbar for quick access to key operational centers:
 - **Spring Boot Core Ledger Microservices**: Fully-functional REST endpoints for account creation, balance checks, deposits, withdrawals, and bank-to-bank transfers.
 - **Google Antigravity SDK Agent (Python)**:
   - Integration of Gemini models for reasoning and tool-calling.
-  - Filesystem-based skill loading, importing the standard agent skills (`architect`, `remember`, `recover`, `review`) to drive system behavior.
+  - Filesystem-based skill loading, importing the standard agent skills (`architect`, `scope`, `develop`, `check`, `test`, `audit`, `debug`, `document`, `sync`) to drive system behavior.
   - Multi-agent orchestration (Main Supervisor agent delegating tasks to Fraud, Compliance, and Credit subagents).
 - **Interactive Officer Chat & Audit Console**:
   - React/Next.js interface displaying real-time agent "thoughts" (reasoning tokens) and execution logs.
@@ -98,4 +98,4 @@ A sleek, responsive top navbar for quick access to key operational centers:
 2. **Low Latency Reasoning**: The agent streams thoughts and responses under 3 seconds using the Gemini 2.0 Flash model.
 3. **95%+ Test Coverage**: Core microservice business logic is fully protected by automated unit and integration tests.
 4. **Seamless Local Run**: The entire project builds and runs using a single `docker compose up` command.
-5. **Interactive Skill Execution**: The agent successfully utilizes loaded skills (`architect` to draft loan restructures, `remember` to retain chat state).
+5. **Interactive Skill Execution**: The agent successfully utilizes loaded skills (e.g. `architect` to draft loan restructures, `scope` to bound feature tasks, and `audit` to evaluate compliance metrics).

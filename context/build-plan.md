@@ -54,10 +54,10 @@ Expose Spring Boot microservice REST endpoints to the Antigravity Agent as tools
     - `submit_compliance_report(account_id: str, risk_score: int, reasoning: str, report: str)`
   - Use Python function annotations and docstrings so the agent can discover these functions as native tools.
 
-### 06 Agent Skill Integration (remember, recover, architect)
+### 06 Agent Skill Integration (architect, scope, develop, check, test, audit, debug, document, sync)
 Load and adapt filesystem-based skills from `jsmastery-pro/skills`.
 - **Logic**:
-  - Verify that skills `remember` (session management), `recover` (error boundary handling), and `architect` (planning complex financial restructures) are correctly resolved from the filesystem.
+  - Verify that skills like `architect` (system changes), `scope` (bounding tasks), and `debug` (resolving execution path errors) are correctly resolved from the filesystem.
   - Add a custom banking skill: `compliance-audit`. The skill instructs the agent on how to run transaction velocity analysis and structures SAR reports.
 
 ### 07 Pytest Suite
