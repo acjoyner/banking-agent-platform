@@ -9,11 +9,11 @@ Use this file to monitor the execution of the build plan. Check off items as the
   - [x] Implement JPA repository and model for `accounts` database schema.
   - [x] Write REST controller endpoints (create, fetch details, update limits).
   - [x] Write JUnit 5 unit tests for checking balance bounds and validations.
-- [ ] **02 Transaction Service**
-  - [ ] Implement JPA repository and model for transaction history log.
-  - [ ] Write endpoints to submit deposits, withdrawals, and bank transfers.
-  - [ ] Implement safety trigger: automatically flag any transaction above $10,000.
-  - [ ] Write JUnit 5/Mockito tests verifying balance adjustments and insufficient funds states.
+- [x] **02 Transaction Service**
+  - [x] Implement JPA repository and model for transaction history log.
+  - [x] Write endpoints to submit deposits, withdrawals, and bank transfers.
+  - [x] Implement safety trigger: automatically flag any transaction above $10,000.
+  - [x] Write JUnit 5/Mockito tests verifying balance adjustments and insufficient funds states.
 - [ ] **03 Compliance Service**
   - [ ] Create repository and model for compliance reports.
   - [ ] Write REST endpoint to submit AI audit findings and markdown reports.
