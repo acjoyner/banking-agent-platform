@@ -32,9 +32,9 @@ Use this file to monitor the execution of the build plan. Check off items as the
 - [x] **06 Agent Skill Integration**
   - [x] Copy and configure skill folders (`architect`, `scope`, `develop`, `check`, `test`, `audit`, `debug`, `document`, `sync`) from `jsmastery-pro/skills`.
   - [x] Implement specialized `compliance-audit` skill instructions.
-- [ ] **07 Pytest Suite**
-  - [ ] Write tests verifying tool selection by the agent under mocked response rules.
-  - [ ] Write tests verifying error handling (using the `debug` and recovery skill logic).
+- [x] **07 Pytest Suite**
+  - [x] Write tests verifying tool selection by the agent under mocked response rules.
+  - [x] Write tests verifying error handling (using the `debug` and recovery skill logic).
 
 ---
 
