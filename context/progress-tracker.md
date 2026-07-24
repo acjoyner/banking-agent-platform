@@ -22,10 +22,10 @@ Use this file to monitor the execution of the build plan. Check off items as the
 ---
 
 ## Phase 2 — Python Antigravity Agent & Skills Integration
-- [ ] **04 SDK Environment & Config**
-  - [ ] Create python virtual environment and verify package installations (`google-antigravity`, `httpx`).
-  - [ ] Setup `.env` configuration file with Gemini API Key.
-  - [ ] Setup `LocalAgentConfig` to resolve custom skill folders.
+- [x] **04 SDK Environment & Config**
+  - [x] Create python virtual environment and verify package installations (`google-antigravity`, `httpx`).
+  - [x] Setup `.env` configuration file with Gemini API Key.
+  - [x] Setup `LocalAgentConfig` to resolve custom skill folders.
 - [ ] **05 Custom Agent Tools**
   - [ ] Implement python helper functions to consume Spring Boot REST API endpoints.
   - [ ] Define annotations, descriptions, and typings for tool-calling registration.
