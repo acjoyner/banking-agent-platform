@@ -1,0 +1,25 @@
+# Java (Maven) compiled classes
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Python virtual environment & cache
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+
+# Node.js dependencies & builds
+node_modules/
+.next/
+dist/
+build/
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
