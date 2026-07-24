@@ -51,10 +51,10 @@ Use this file to monitor the execution of the build plan. Check off items as the
 ---
 
 ## Phase 4 — Cloud-Native & DevOps
-- [ ] **10 Dockerization**
-  - [ ] Create multi-stage `Dockerfile` for Spring Boot microservices.
-  - [ ] Create `Dockerfile` for Python agent.
-  - [ ] Verify local database connectivity using `docker-compose.yml`.
+- [x] **10 Dockerization**
+  - [x] Create multi-stage `Dockerfile` for Spring Boot microservices.
+  - [x] Create `Dockerfile` for Next.js React frontend app.
+  - [x] Verify local database connectivity using `docker-compose.yml` with initialization script.
 - [ ] **11 CI/CD Pipelines**
   - [ ] Define GitHub Actions pipeline to run maven tests, python lints, and react build checks.
 - [ ] **12 Production Support & Health Checks**
