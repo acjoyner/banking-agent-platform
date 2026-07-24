@@ -5,10 +5,10 @@ Use this file to monitor the execution of the build plan. Check off items as the
 ---
 
 ## Phase 1 — Spring Boot Microservices
-- [ ] **01 Account Service**
-  - [ ] Implement JPA repository and model for `accounts` database schema.
-  - [ ] Write REST controller endpoints (create, fetch details, update limits).
-  - [ ] Write JUnit 5 unit tests for checking balance bounds and validations.
+- [x] **01 Account Service**
+  - [x] Implement JPA repository and model for `accounts` database schema.
+  - [x] Write REST controller endpoints (create, fetch details, update limits).
+  - [x] Write JUnit 5 unit tests for checking balance bounds and validations.
 - [ ] **02 Transaction Service**
   - [ ] Implement JPA repository and model for transaction history log.
   - [ ] Write endpoints to submit deposits, withdrawals, and bank transfers.
