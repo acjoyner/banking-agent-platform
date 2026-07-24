@@ -26,9 +26,9 @@ Use this file to monitor the execution of the build plan. Check off items as the
   - [x] Create python virtual environment and verify package installations (`google-antigravity`, `httpx`).
   - [x] Setup `.env` configuration file with Gemini API Key.
   - [x] Setup `LocalAgentConfig` to resolve custom skill folders.
-- [ ] **05 Custom Agent Tools**
-  - [ ] Implement python helper functions to consume Spring Boot REST API endpoints.
-  - [ ] Define annotations, descriptions, and typings for tool-calling registration.
+- [x] **05 Custom Agent Tools**
+  - [x] Implement python helper functions to consume Spring Boot REST API endpoints.
+  - [x] Define annotations, descriptions, and typings for tool-calling registration.
 - [ ] **06 Agent Skill Integration**
   - [ ] Copy and configure skill folders (`architect`, `scope`, `develop`, `check`, `test`, `audit`, `debug`, `document`, `sync`) from `jsmastery-pro/skills`.
   - [ ] Implement specialized `compliance-audit` skill instructions.
