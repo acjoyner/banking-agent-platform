@@ -30,3 +30,15 @@ File: `src/app/layout.tsx`
 *   **Glow Card Green**: `border: 1px solid var(--border-glow);` - for low-risk items.
 *   **Glow Card Amber**: `border: 1px solid rgba(245, 158, 11, 0.2);` - for medium-risk items.
 *   **Glow Card Red**: `border: 1px solid rgba(239, 68, 68, 0.2);` - for high-risk alerts.
+
+### Interactive Dashboard Page
+File: `src/app/page.tsx`
+Last updated: 2026-07-24
+
+| Property | Style / Classes | Description |
+| :--- | :--- | :--- |
+| **Grid Layout** | `grid grid-cols-1 md:grid-cols-3` | 3-column top card row for selectors/balances |
+| **Console log** | `bg-black/60 border border-white/10 text-emerald-400` | Mock terminal log display |
+| **Floating Chat** | `w-80 h-96 fixed bottom-6 right-6 border-[#10B981]` | Advisory widget container |
+| **Table Layout** | `w-full text-left border-collapse font-mono` | Real-time transaction history display |
+
