@@ -1,0 +1,6 @@
+google-antigravity
+httpx
+pydantic
+python-dotenv
+pytest
+pytest-asyncio
