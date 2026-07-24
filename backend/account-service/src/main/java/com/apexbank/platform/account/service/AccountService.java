@@ -10,4 +10,5 @@ public interface AccountService {
     AccountResponse getAccountById(String id);
     List<AccountResponse> getAllAccounts();
     AccountResponse updateLimits(String id, UpdateLimitsRequest request);
+    AccountResponse updateBalance(String id, java.math.BigDecimal amount);
 }

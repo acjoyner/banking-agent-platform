@@ -87,4 +87,20 @@ public class AccountServiceImpl implements AccountService {
         Account updated = accountRepository.save(account);
         return AccountResponse.fromEntity(updated);
     }
+
+    @Override
+    @Transactional
+    public AccountResponse updateBalance(String id, java.math.BigDecimal amount) {
+        Account account = accountRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Account with ID " + id + " not found"));
+
+        java.math.BigDecimal newBalance = account.getBalance().add(amount);
+        if (newBalance.compareTo(java.math.BigDecimal.ZERO) < 0) {
+            throw new BadRequestException("Insufficient funds. Available balance: " + account.getBalance());
+        }
+
+        account.setBalance(newBalance);
+        Account updated = accountRepository.save(account);
+        return AccountResponse.fromEntity(updated);
+    }
 }

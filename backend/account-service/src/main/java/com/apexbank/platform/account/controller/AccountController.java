@@ -47,4 +47,12 @@ public class AccountController {
         AccountResponse response = accountService.updateLimits(id, request);
         return ResponseEntity.ok(response);
     }
+
+    @PutMapping("/{id}/balance")
+    public ResponseEntity<AccountResponse> updateBalance(
+            @PathVariable String id,
+            @RequestParam java.math.BigDecimal amount) {
+        AccountResponse response = accountService.updateBalance(id, amount);
+        return ResponseEntity.ok(response);
+    }
 }

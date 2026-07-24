@@ -134,4 +134,45 @@ public class AccountServiceTest {
         verify(accountRepository, times(1)).findById(accountId);
         verify(accountRepository, never()).save(any(Account.class));
     }
+
+    @Test
+    void updateBalance_Deposit_Success() {
+        // Arrange
+        String accountId = "ACC-12345678";
+        Account existing = new Account(
+            accountId, "John Doe", "john@example.com", AccountType.CHECKING,
+            BigDecimal.valueOf(1000.00), BigDecimal.valueOf(5000.00), BigDecimal.valueOf(2000.00), RiskLevel.LOW
+        );
+
+        when(accountRepository.findById(accountId)).thenReturn(Optional.of(existing));
+        when(accountRepository.save(any(Account.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        // Act
+        AccountResponse response = accountService.updateBalance(accountId, BigDecimal.valueOf(500.00));
+
+        // Assert
+        assertThat(response.balance()).isEqualByComparingTo("1500.00");
+        verify(accountRepository, times(1)).findById(accountId);
+        verify(accountRepository, times(1)).save(any(Account.class));
+    }
+
+    @Test
+    void updateBalance_Withdrawal_InsufficientFunds_ThrowsBadRequest() {
+        // Arrange
+        String accountId = "ACC-12345678";
+        Account existing = new Account(
+            accountId, "John Doe", "john@example.com", AccountType.CHECKING,
+            BigDecimal.valueOf(100.00), BigDecimal.valueOf(5000.00), BigDecimal.valueOf(2000.00), RiskLevel.LOW
+        );
+
+        when(accountRepository.findById(accountId)).thenReturn(Optional.of(existing));
+
+        // Act & Assert
+        assertThatThrownBy(() -> accountService.updateBalance(accountId, BigDecimal.valueOf(-150.00)))
+            .isInstanceOf(BadRequestException.class)
+            .hasMessageContaining("Insufficient funds");
+
+        verify(accountRepository, times(1)).findById(accountId);
+        verify(accountRepository, never()).save(any(Account.class));
+    }
 }
