@@ -39,14 +39,14 @@ Use this file to monitor the execution of the build plan. Check off items as the
 ---
 
 ## Phase 3 — Frontend Dashboard (Next.js/React)
-- [ ] **08 Dashboard Landing & Account Portal**
-  - [ ] Build layout, navbar, checking/savings overview cards.
-  - [ ] Build transaction history tables with sorting/filtering controls.
-  - [ ] Implement customer advisory chat widget.
-- [ ] **09 Compliance Audit Console**
-  - [ ] Build compliance dashboard listing flagged accounts.
-  - [ ] Implement live audit view that streams agent thought blocks and action steps.
-  - [ ] Wire buttons to submit manual hold/dismiss orders back to Spring Boot.
+- [x] **08 Dashboard Landing & Account Portal**
+  - [x] Build layout, navbar, checking/savings overview cards.
+  - [x] Build transaction history tables with sorting/filtering controls.
+  - [x] Implement customer advisory chat widget.
+- [x] **09 Compliance Audit Console**
+  - [x] Build compliance dashboard listing flagged accounts.
+  - [x] Implement live audit view that streams agent thought blocks and action steps.
+  - [x] Wire buttons to submit manual hold/dismiss orders back to Spring Boot.
 
 ---
 
