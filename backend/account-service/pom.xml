@@ -14,7 +14,7 @@
     <name>account-service</name>
     <description>Core Account Management Service for ApexBank</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <!-- Spring Boot Starters -->
