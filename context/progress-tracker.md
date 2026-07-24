@@ -55,9 +55,9 @@ Use this file to monitor the execution of the build plan. Check off items as the
   - [x] Create multi-stage `Dockerfile` for Spring Boot microservices.
   - [x] Create `Dockerfile` for Next.js React frontend app.
   - [x] Verify local database connectivity using `docker-compose.yml` with initialization script.
-- [ ] **11 CI/CD Pipelines**
-  - [ ] Define GitHub Actions pipeline to run maven tests, python lints, and react build checks.
-- [ ] **12 Production Support & Health Checks**
-  - [ ] Enable Spring Actuator health monitoring.
-  - [ ] Implement structured JSON logging formats.
-  - [ ] Implement CLI trigger script `/agent/cli.py --run-audit` for operations staff.
+- [x] **11 CI/CD Pipelines**
+  - [x] Define GitHub Actions pipeline to run maven tests, python lints, and react build checks.
+- [x] **12 Production Support & Health Checks**
+  - [x] Enable Spring Actuator health monitoring.
+  - [x] Implement structured JSON logging formats.
+  - [x] Implement CLI trigger script `/agent/cli.py --run-audit` for operations staff.
