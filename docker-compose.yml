@@ -20,6 +20,7 @@ services:
 
   # Account Microservice
   account-service:
+    image: acjoyner81/apexbank-account-service:latest
     build:
       context: ./backend/account-service
       dockerfile: Dockerfile
@@ -36,6 +37,7 @@ services:
 
   # Transaction Microservice
   transaction-service:
+    image: acjoyner81/apexbank-transaction-service:latest
     build:
       context: ./backend/transaction-service
       dockerfile: Dockerfile
@@ -55,6 +57,7 @@ services:
 
   # Compliance Microservice
   compliance-service:
+    image: acjoyner81/apexbank-compliance-service:latest
     build:
       context: ./backend/compliance-service
       dockerfile: Dockerfile
@@ -71,6 +74,7 @@ services:
 
   # Next.js React Frontend Dashboard
   frontend:
+    image: acjoyner81/apexbank-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
