@@ -73,6 +73,7 @@ No state transitions exist for this entity. It is read only once written to the 
 **Value sourcing**:
 | Action | Value produced / displayed | Source |
 |---|---|---|
+| Run Audit | `id` | System generated (UUID format COMP-XXXXXXXX) |
 | Run Audit | `accountId` | Path variable from request |
 | Run Audit | `flaggedTransactionId` | Query parameter from request |
 | Run Audit | `triggerType` | Query parameter from request (defaults to "MANUAL") |
@@ -80,6 +81,7 @@ No state transitions exist for this entity. It is read only once written to the 
 | Run Audit | `reasoning` | JSON response from Gemini model |
 | Run Audit | `actionsTaken` | Derived from the calculated risk score (AUTO_FREEZE if risk >= 80, MONITOR if risk >= 50, else NONE) |
 | Run Audit | `draftedSar` | Markdown response text from Gemini model |
+| Run Audit | `createdAt` | System generated (LocalDateTime.now() on persist) |
 
 **Key invariants**:
 * The risk score must be between 0 and 100 inclusive.
@@ -91,6 +93,8 @@ These endpoints are internal. They communicate inside the secure virtual network
 
 **Configuration required**:
 * `SPRING_AI_GOOGLE_GENAI_API_KEY`: The Google AI Studio API key used to authenticate with Gemini.
+* `ACCOUNT_SERVICE_URL`: The URL to fetch account details from the Accounts Service.
+* `TRANSACTION_SERVICE_URL`: The URL to fetch ledger logs from the Transaction Service.
 
 **Critical test scenarios**:
 * Happy path: Trigger audit on account with transactions, verifies **AC-1**, **AC-2**, **AC-3**, **AC-4**, **AC-6**.
