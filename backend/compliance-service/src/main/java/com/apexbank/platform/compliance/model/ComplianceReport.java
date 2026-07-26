@@ -36,6 +36,12 @@ public class ComplianceReport {
     @Column(name = "drafted_sar", columnDefinition = "TEXT")
     private String draftedSar; // Markdown text containing Suspicious Activity Report
 
+    @Column(name = "flagged_transaction_id", length = 50)
+    private String flaggedTransactionId;
+
+    @Column(name = "trigger_type", length = 20)
+    private String triggerType; // 'AUTOMATIC', 'MANUAL'
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -47,15 +53,23 @@ public class ComplianceReport {
     // Default Constructor
     public ComplianceReport() {}
 
-    // Parametrized Constructor
+    // Backward-compatible constructor
     public ComplianceReport(String id, String accountId, Integer riskScore, String reasoning,
                             String actionsTaken, String draftedSar) {
+        this(id, accountId, riskScore, reasoning, actionsTaken, draftedSar, null, "MANUAL");
+    }
+
+    // Fully-parameterized Constructor
+    public ComplianceReport(String id, String accountId, Integer riskScore, String reasoning,
+                            String actionsTaken, String draftedSar, String flaggedTransactionId, String triggerType) {
         this.id = id;
         this.accountId = accountId;
         this.riskScore = riskScore;
         this.reasoning = reasoning;
         this.actionsTaken = actionsTaken;
         this.draftedSar = draftedSar;
+        this.flaggedTransactionId = flaggedTransactionId;
+        this.triggerType = triggerType;
     }
 
     // Getters and Setters
@@ -113,5 +127,21 @@ public class ComplianceReport {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getFlaggedTransactionId() {
+        return flaggedTransactionId;
+    }
+
+    public void setFlaggedTransactionId(String flaggedTransactionId) {
+        this.flaggedTransactionId = flaggedTransactionId;
+    }
+
+    public String getTriggerType() {
+        return triggerType;
+    }
+
+    public void setTriggerType(String triggerType) {
+        this.triggerType = triggerType;
     }
 }
