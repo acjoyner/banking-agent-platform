@@ -30,3 +30,4 @@ management:
 app:
   services:
     account-url: ${ACCOUNT_SERVICE_URL:http://localhost:8081}
+    compliance-url: ${COMPLIANCE_SERVICE_URL:http://localhost:8083}
