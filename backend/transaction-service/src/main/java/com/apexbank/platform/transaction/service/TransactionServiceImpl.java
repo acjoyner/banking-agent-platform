@@ -123,4 +123,36 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionRepository.findByAccountId(accountId, pageable)
             .map(TransactionResponse::fromEntity);
     }
+
+    @Override
+    @Transactional
+    public TransactionResponse rollbackTransaction(String transactionId) {
+        Transaction transaction = transactionRepository.findById(transactionId)
+            .orElseThrow(() -> new BadRequestException("Transaction not found"));
+
+        if (transaction.getStatus() == TransactionStatus.ROLLED_BACK) {
+            throw new BadRequestException("Transaction is already rolled back");
+        }
+
+        BigDecimal rollbackAdjustment = transaction.getAmount();
+
+        if (transaction.getTransactionType() == TransactionType.DEPOSIT) {
+            rollbackAdjustment = transaction.getAmount().negate();
+        } else if (transaction.getTransactionType() == TransactionType.WITHDRAWAL) {
+            rollbackAdjustment = transaction.getAmount();
+        } else {
+            throw new BadRequestException("Direct transfer rollback is not supported; execute manual reversal instead");
+        }
+
+        try {
+            String url = accountServiceUrl + "/api/accounts/" + transaction.getAccountId() + "/balance?amount=" + rollbackAdjustment;
+            restTemplate.put(url, null);
+        } catch (Exception ex) {
+            throw new BadRequestException("Could not connect to Account Service for rollback: " + ex.getMessage());
+        }
+
+        transaction.setStatus(TransactionStatus.ROLLED_BACK);
+        Transaction saved = transactionRepository.save(transaction);
+        return TransactionResponse.fromEntity(saved);
+    }
 }

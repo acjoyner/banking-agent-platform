@@ -16,7 +16,7 @@ public class Transaction {
     }
 
     public enum TransactionStatus {
-        PENDING, COMPLETED, FLAGGED
+        PENDING, COMPLETED, FLAGGED, ROLLED_BACK
     }
 
     @Id

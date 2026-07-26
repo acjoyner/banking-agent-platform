@@ -29,6 +29,12 @@ public class TransactionController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @PostMapping("/rollback/{transactionId}")
+    public ResponseEntity<TransactionResponse> rollbackTransaction(@PathVariable String transactionId) {
+        TransactionResponse response = transactionService.rollbackTransaction(transactionId);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/account/{accountId}")
     public ResponseEntity<Page<TransactionResponse>> getTransactionsByAccountId(
             @PathVariable String accountId,
