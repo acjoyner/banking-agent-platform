@@ -27,6 +27,9 @@ public class TransactionServiceImpl implements TransactionService {
     @Value("${app.services.account-url}")
     private String accountServiceUrl;
 
+    @Value("${app.services.compliance-url}")
+    private String complianceServiceUrl;
+
     @Autowired
     public TransactionServiceImpl(TransactionRepository transactionRepository, RestTemplate restTemplate) {
         this.transactionRepository = transactionRepository;
@@ -97,6 +100,20 @@ public class TransactionServiceImpl implements TransactionService {
         );
 
         Transaction saved = transactionRepository.save(transaction);
+
+        if (status == TransactionStatus.FLAGGED) {
+            final String accountId = request.accountId();
+            final String transactionId = id;
+            new Thread(() -> {
+                try {
+                    String auditUrl = complianceServiceUrl + "/api/compliance/reports/audit/" + accountId + "?transactionId=" + transactionId + "&triggerType=AUTOMATIC";
+                    restTemplate.postForObject(auditUrl, null, String.class);
+                } catch (Exception e) {
+                    System.err.println("Failed to trigger automated compliance audit: " + e.getMessage());
+                }
+            }).start();
+        }
+
         return TransactionResponse.fromEntity(saved);
     }
 
