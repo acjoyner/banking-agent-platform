@@ -33,7 +33,9 @@ public class ComplianceServiceImpl implements ComplianceService {
             request.riskScore(),
             request.reasoning(),
             request.actionsTaken(),
-            request.draftedSar()
+            request.draftedSar(),
+            request.flaggedTransactionId(),
+            request.triggerType() != null ? request.triggerType() : "MANUAL"
         );
 
         ComplianceReport saved = reportRepository.save(report);

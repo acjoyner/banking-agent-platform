@@ -10,6 +10,8 @@ public record ComplianceResponse(
     String reasoning,
     String actionsTaken,
     String draftedSar,
+    String flaggedTransactionId,
+    String triggerType,
     LocalDateTime createdAt
 ) {
     public static ComplianceResponse fromEntity(ComplianceReport report) {
@@ -20,6 +22,8 @@ public record ComplianceResponse(
             report.getReasoning(),
             report.getActionsTaken(),
             report.getDraftedSar(),
+            report.getFlaggedTransactionId(),
+            report.getTriggerType(),
             report.getCreatedAt()
         );
     }

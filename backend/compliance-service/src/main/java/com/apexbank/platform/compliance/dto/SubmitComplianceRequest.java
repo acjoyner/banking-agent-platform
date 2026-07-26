@@ -20,5 +20,9 @@ public record SubmitComplianceRequest(
     @NotBlank(message = "Actions taken is required")
     String actionsTaken, // 'AUTO_FREEZE', 'MONITOR', 'NONE'
 
-    String draftedSar // Markdown formatted suspicious activity report
+    String draftedSar, // Markdown formatted suspicious activity report
+
+    String flaggedTransactionId,
+
+    String triggerType // 'AUTOMATIC', 'MANUAL'
 ) {}
