@@ -27,6 +27,15 @@ public class ComplianceController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @PostMapping("/audit/{accountId}")
+    public ResponseEntity<ComplianceResponse> runAudit(
+            @PathVariable String accountId,
+            @RequestParam(required = false) String transactionId,
+            @RequestParam(required = false, defaultValue = "MANUAL") String triggerType) {
+        ComplianceResponse response = complianceService.runAudit(accountId, transactionId, triggerType);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
     @GetMapping("/account/{accountId}")
     public ResponseEntity<List<ComplianceResponse>> getReportsByAccountId(@PathVariable String accountId) {
         List<ComplianceResponse> responses = complianceService.getReportsByAccountId(accountId);
