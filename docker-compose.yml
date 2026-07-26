@@ -49,6 +49,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - COMPLIANCE_SERVICE_URL=http://compliance-service:8083
     depends_on:
       postgres:
         condition: service_healthy
@@ -68,6 +69,9 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/apexbank_compliance
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
+      - ACCOUNT_SERVICE_URL=http://account-service:8081
+      - TRANSACTION_SERVICE_URL=http://transaction-service:8082
+      - SPRING_AI_GOOGLE_GENAI_API_KEY=${SPRING_AI_GOOGLE_GENAI_API_KEY}
     depends_on:
       postgres:
         condition: service_healthy
