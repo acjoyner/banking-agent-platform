@@ -64,12 +64,12 @@ Use this file to monitor the execution of the build plan. Check off items as the
 
 ---
 
-## Phase 5 — Spring AI & Gemini Backend Integration (In Progress)
-- [ ] **13 Spring AI Setup & Vault Service**
-  - [ ] Add Spring Milestone repository and `spring-ai-starter-model-google-genai` to pom.xml.
-  - [ ] Extend ComplianceReport model with flaggedTransactionId and triggerType.
-  - [ ] Implement Spring AI configuration and audit service calls.
-  - [ ] Implement programmatic fallback logic.
-  - [ ] Expose audit REST endpoint in compliance service.
-  - [ ] Trigger async compliance audits from transaction service.
-  - [ ] Write integration test verification suite.
+## Phase 5 — Spring AI & Gemini Backend Integration (Completed)
+- [x] **13 Spring AI Setup & Vault Service**
+  - [x] Add Spring Milestone repository and `spring-ai-starter-model-google-genai` to pom.xml.
+  - [x] Extend ComplianceReport model with flaggedTransactionId and triggerType.
+  - [x] Implement Spring AI configuration and audit service calls.
+  - [x] Implement programmatic fallback logic.
+  - [x] Expose audit REST endpoint in compliance service.
+  - [x] Trigger async compliance audits from transaction service.
+  - [x] Write integration test verification suite.
