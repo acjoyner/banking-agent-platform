@@ -8,4 +8,5 @@ public interface ComplianceService {
     ComplianceResponse submitReport(SubmitComplianceRequest request);
     List<ComplianceResponse> getReportsByAccountId(String accountId);
     List<ComplianceResponse> getAllReports();
+    ComplianceResponse runAudit(String accountId, String flaggedTransactionId, String triggerType);
 }

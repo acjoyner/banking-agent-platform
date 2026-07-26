@@ -17,6 +17,18 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  ai:
+    google:
+      genai:
+        api-key: ${SPRING_AI_GOOGLE_GENAI_API_KEY:mock-key}
+        model: gemini-1.5-flash
+
+app:
+  services:
+    account:
+      url: ${ACCOUNT_SERVICE_URL:http://localhost:8081}
+    transaction:
+      url: ${TRANSACTION_SERVICE_URL:http://localhost:8082}
 
 management:
   endpoints:
