@@ -109,7 +109,7 @@ public class ComplianceServiceImpl implements ComplianceService {
                     "Please generate the JSON response now.";
 
                 ChatResponse chatResponse = chatModel.call(new Prompt(promptText));
-                String responseText = chatResponse.getResult().getOutput().getContent();
+                String responseText = chatResponse.getResult().getOutput().getText();
                 String cleanedJson = cleanJson(responseText);
 
                 ObjectMapper mapper = new ObjectMapper();
